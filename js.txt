@@ -1,0 +1,228 @@
+fields: [
+                //linha 1
+                {name: "codigo", title: "Código", type: "text", required: true,length: "17",colSpan: 2, width: "*"},
+                {name: "nome", title: "Nome", required: true, type: "text", colSpan: 3,length: "55", width: "*"},
+                {name: "apelido", title: "Apelido", required: true, type: "text", colSpan: 3, width: "*"},
+                // Linha 2
+                {name: "dataNascimento", required: true, title: "Data nascimento", type: "date", useTextField: true, colSpan: 2, width: "*" },
+                {
+                    name: "sexo",
+                    required: true,
+                    title: "Sexo:",
+                    Type: "SelectItem",
+                    multipleAppearance: "picklist",
+                    valueMap: {
+                        "masculino": "Masculino",
+                        "feminino": "Feminino",
+                    },
+                    colSpan: 2,
+    width: "*"
+                },
+                {
+                    name: "cpf",
+                    title: "CPF:",
+                    required: true,
+                    validators: [
+                        {
+                            type: "mask",
+                            mask: "^(\\d{3})\\.?(\\d{3})\\.?(\\d{3})\\-?(\\d{2})\\s*$",
+                            transformTo: "$1.$2.$3-$4",
+                            errorMessage: "CPF inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    hint: "000.000.000-00",
+                    showHintInField: true,
+                    colSpan: 1,
+    width: "*"
+                },
+                {
+                    name: "rgRne",
+                    required: true,
+                    title: "RG/RNE",
+                    validators: [
+                        {
+                            type: "mask",
+                            mask: "^(\\d{2})\\.?(\\d{3})\\.?(\\d{3})\\-?(\\d{1})\\s*$",
+                            transformTo: "$1.$2.$3-$4",
+                            errorMessage: "RG/RNE inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    hint: "00.000.000-0",
+                    showHintInField: true,
+                    colSpan: 1,
+    width: "*"
+                },
+                {
+                    name: "orgaoEmissor",
+                    required: true,
+                    title: "Órgão emissor",
+                    type: "text",
+                    wrapTitle: false,
+                    colSpan: "2",
+    width: "*"
+                },
+                // linha 3
+                {
+                    name: "estado",
+                    title: "Estado",
+                    type: "select",
+                    //valueMap: Object.keys(localidades),
+                    //changed: "dform.getField('cidade').setValueMap(item.cidades[value])",
+                    //cidades: estadosReduced,
+                    colSpan: 2,
+    width: "*"
+                },
+                {
+                    name: "cidade",
+                    title: "Cidade",
+                    type: "select",
+                    //changed: "dform.getField('bairro').setValueMap(item.bairros[value])",
+                    //bairros: cidadesReduced,
+                    width: "*",
+                    colSpan: "2",
+    width: "*"
+                },
+                {
+                    name: "bairro",
+                    title: "Bairro",
+                    type: "select",
+    colSpan: "2",
+                    width: "*"
+                },
+                {
+                    name: "cep",
+                    required: true,
+                    title: "CEP",
+                    validators: [
+                        {
+                            type: "mask",
+                            mask: "^(\\d{5})\\-?(\\d{3})s*$",
+                            transformTo: "$1-$2",
+                            errorMessage: "CEP inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    hint: "00000-00",
+                    showHintInField: true,
+                    colSpan: "2",
+                    width: "*"
+                },
+                // linha 4
+                {
+                    name: "tipoLogradouro",
+                    required: true,
+                    title: "Tipo",
+                    editorType: "SelectItem",
+                    multipleAppearance: "picklist",
+    colSpan: "1",
+                    width: "*"
+                },
+                {
+                    name: "logradouro",
+                    required: true,
+                    title: "Logradouro",
+                    editorType: "SelectItem",
+                    multipleAppearance: "picklist",
+    colSpan: "2",
+                    width: "*"
+                },
+                {
+                    name: "numero",
+                    required: true,
+                    title: "Número",
+                    type: "integer",
+    colSpan: "1",
+                    width: "*"
+                },
+                {
+                    name: "complemento",
+                    required: true,
+                    title: "Complemento",
+                    Type: "text",
+    colSpan: "2",
+                    width: "*"
+                },
+                {name: "operadorWMS", title: "Operador WMS", type: "checkbox", height: 25},
+                {name: "ativo", title: "Ativo", type: "checkbox", height: 25},
+                // linha 5
+                {
+                    name: "dddTelefone",
+                    required: true,
+                    title: "DDD",
+                    validators: [
+                        {
+                            type: "mask",
+                            mask: "^(\\d)(\\d)s*$",
+                            transformTo: "($1$2)",
+                            errorMessage: "DDD inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    hint: "(00)",
+                    showHintInField: true,
+                    width: "*"
+                },
+                {
+                    name: "telefone",
+                    required: true,
+                    title: "Telefone",
+                    type: "integer",
+                    wrapTitle: false,
+                    width: "*"
+                },
+    
+                {
+                    name: "dddCelular",
+                    required: true,
+                    title: "DDD",
+                    validators: [
+                        {
+                            type: "mask",
+                            mask: "^(\\d)(\\d)s*$",
+                            transformTo: "($1$2)",
+                            errorMessage: "DDD inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    hint: "(00)",
+                    showHintInField: true,
+                    width: "*"
+                },
+                {
+                    name: "celular",
+                    required: true,
+                    title: "celular",
+                    validators: [
+                        {
+                            type: "mask",
+                            mask: "^(\\d{5})\\-?(\\d{4})s*$",
+                            transformTo: "$1-$2",
+                            errorMessage: "Celular inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    hint: "00000-0000",
+                    showHintInField: true,
+                    width: "*"
+                },
+    
+                {
+                    name: "email",
+                    required: true,
+                    title: "Email",
+                    validators: [
+                        {
+                            type: "regexp",
+                            expression: "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$",
+                            errorMessage: "Email inválido. Digite novamente!",
+                        }
+                    ],
+                    validateOnChange: true,
+                    colSpan: "4",
+                    width: "*"
+                },
+            ]
+        });
+    }
